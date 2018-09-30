@@ -111,6 +111,11 @@ with(HAPPY2, HAPPY2[order(MARITAL, AGE),])
 *Happiness!*
 
 Investigate the relationship between happiness and two other variables in the data. Find a visualization that captures the relationship and write a paragraph to describe it. 
+  + First Graph: 
+    + The first graph shows rhe relationship between happiness and marriage for each gender. 
+    + Most people seem to label themselves as pretty happy happy and the largest subcatagory in that for both genders is Married.
+    + Out of the very happy people; the majority are married.
+    + This graph indicates thats Marriage most likely has a positive impact on happiness.
 
 ```{r}
 
@@ -121,6 +126,7 @@ ggplot(data = HAPPY) +
   geom_mosaic(aes(x = product(HAPPY, SEX), fill=MARITAL, weight=1)) + coord_flip()
 
 ```
+
 
 Each member should study a different question (choose different variables to investigate).
 
