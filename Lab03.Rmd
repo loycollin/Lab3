@@ -89,7 +89,7 @@ Write a separate code chunk for each variable, once all the data manipulation is
 ```{r}
 str(HAPPY)
 HAPPY$HAPPY = factor(HAPPY$HAPPY)
-HAPPY$AGE = factor(HAPPY$AGE)
+HAPPY$AGE = as.numeric(HAPPY$AGE)
 HAPPY$SEX = factor(HAPPY$SEX)
 HAPPY$MARITAL = factor(HAPPY$MARITAL)
 HAPPY$DEGREE = factor(HAPPY$DEGREE)
@@ -98,16 +98,29 @@ HAPPY$HEALTH = factor(HAPPY$HEALTH)
 HAPPY$PARTYID = factor(HAPPY$PARTYID)
 HAPPY$POLVIEWS = factor(HAPPY$POLVIEWS)
 str(HAPPY)
-
+replace
 ```
 3. Bring all levels of factors into a sensible order. For marital you could e.g. order the levels according to average age. 
 
-
+```{r}
+HAPPY2 = HAPPY
+with(HAPPY2, HAPPY2[order(MARITAL, AGE),])
+```
 ## Part two (individual exploration)
 
 *Happiness!*
 
 Investigate the relationship between happiness and two other variables in the data. Find a visualization that captures the relationship and write a paragraph to describe it. 
+
+```{r}
+
+library(ggplot2)
+library(ggmosaic)
+
+ggplot(data = HAPPY) +
+  geom_mosaic(aes(x = product(HAPPY, SEX), fill=MARITAL, weight=1)) + coord_flip()
+
+```
 
 Each member should study a different question (choose different variables to investigate).
 
