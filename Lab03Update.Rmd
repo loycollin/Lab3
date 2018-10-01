@@ -113,8 +113,11 @@ str(HAPPY)
 3. Bring all levels of factors into a sensible order. For marital you could e.g. order the levels according to average age. 
 
 ```{r}
-HAPPY2 = HAPPY
-with(HAPPY2, HAPPY2[order(MARITAL, AGE),])
+#HAPPY2 = HAPPY
+#with(HAPPY2, HAPPY2[order(MARITAL, AGE),])
+levels(reorder(HAPPY$MARITAL, HAPPY$AGE, na.rm=TRUE))
+levels(HAPPY$MARITAL)
+
 ```
 ## Part two (individual exploration)
 
