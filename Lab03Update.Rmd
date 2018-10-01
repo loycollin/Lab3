@@ -85,9 +85,9 @@ Write a separate code chunk for each variable, once all the data manipulation is
 1. Data cleaning: the values "IAP", "DK" and "NA" all encode missing values. Replace all of these instances by the value `NA`. 
 
 ```{r}
-replace(HAPPY, HAPPY == "IAP", "NA")
-replace(HAPPY, HAPPY == "DK", "NA")
-replace(HAPPY, HAPPY == "NA", "NA")
+HAPPY = replace(HAPPY, HAPPY == "IAP", value = NA)
+HAPPY = replace(HAPPY, HAPPY == "DK", value = NA)
+HAPPY = replace(HAPPY, HAPPY == "NA", value = NA)
 ```
 
 
@@ -137,6 +137,8 @@ library(ggmosaic)
 
 ggplot(data = HAPPY) +
   geom_mosaic(aes(x = product(HAPPY, SEX), fill=MARITAL, weight=1)) + coord_flip()
+
+ggplot(data = HAPPY) + geom_mosaic(aes(x = product(HAPPY, DEGREE), fill = FINRELA, weight = 1)) + coord_flip()
 
 ```
 
