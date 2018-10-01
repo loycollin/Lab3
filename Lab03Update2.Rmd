@@ -117,6 +117,15 @@ str(HAPPY)
 #with(HAPPY2, HAPPY2[order(MARITAL, AGE),])
 levels(reorder(HAPPY$MARITAL, HAPPY$AGE, FUN = mean, na.rm=TRUE))
 
+levels(factor(HAPPY$POLVIEWS, levels = c("EXTREMELY LIBERAL", "LIBERAL", "SLIGHTLY LIBERAL", "MODERATE", "SLIGHTLY CONSERVATIVE", "CONSERVATIVE", "EXTRMLY CONSERVATIVE")))
+
+levels(factor(HAPPY$DEGREE, levels=c("LT HIGH SCHOOL", "HIGH SCHOOL", "JUNIOR COLLEGE", "BACHELOR", "GRADUATE")))
+levels(HAPPY$DEGREE) = c("Some HS", "HS", "JC", "BA", "GRADUATE")
+
+levels(factor(HAPPY$FINRELA, levels=c("FAR ABOVE AVERAGE", "ABOVE AVERAGE", "AVERAGE", "BELOW AVERAGE", "FAR BELOW AVERAGE")))
+levels(HAPPY$FINRELA) = c("FAR ABOVE", "ABOVE", "AVG", "BELOW", "FAR BELOW")
+
+levels(factor(HAPPY$HEALTH, levels = c("EXCELLENT", "GOOD", "FAIR", "POOR")))
 
 ```
 ## Part two (individual exploration)
@@ -145,13 +154,7 @@ ggplot(data = HAPPY) +
   geom_mosaic(aes(x = product(HAPPY, SEX), fill=MARITAL, weight=1)) + coord_flip()
 
 
-levels(factor(HAPPY$DEGREE, levels=c("LT HIGH SCHOOL", "HIGH SCHOOL", "JUNIOR COLLEGE", "BACHELOR", "GRADUATE")))
-levels(HAPPY$DEGREE) = c("Some HS", "HS", "JC", "BA", "GRADUATE")
-
-levels(factor(HAPPY$FINRELA, levels=c("FAR ABOVE AVERAGE", "ABOVE AVERAGE", "AVERAGE", "BELOW AVERAGE", "FAR BELOW AVERAGE")))
-levels(HAPPY$FINRELA) = c("FAR ABOVE", "ABOVE", "AVG", "BELOW", "FAR BELOW")
-
-ggplot(data = HAPPY) + geom_mosaic(aes(x = product(HAPPY, DEGREE), fill = FINRELA, weight = 1)) + coord_flip()
+ggplot(data = HAPPY) + geom_mosaic(aes(x = product(HAPPY, DEGREE), fill = FINRELA, weight = 1)) + coord_flip()  
 
 ```
 
