@@ -130,6 +130,12 @@ Investigate the relationship between happiness and two other variables in the da
     + Out of the very happy people; the majority are married.
     + This graph indicates thats Marriage most likely has a positive impact on happiness.
 
+
++ Second Graph (Michelle): 
+    + Displays how degree level and financial status relates to happiness. 
+    + The people that are least happy have below average financial status.
+    + Most people label themselves as "pretty happy"
+    + Financial status seems to have a greater impact on happiness.
 ```{r}
 
 library(ggplot2)
