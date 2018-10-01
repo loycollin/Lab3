@@ -115,8 +115,8 @@ str(HAPPY)
 ```{r}
 #HAPPY2 = HAPPY
 #with(HAPPY2, HAPPY2[order(MARITAL, AGE),])
-levels(reorder(HAPPY$MARITAL, HAPPY$AGE, na.rm=TRUE))
-levels(HAPPY$MARITAL)
+levels(reorder(HAPPY$MARITAL, HAPPY$AGE, FUN = mean, na.rm=TRUE))
+
 
 ```
 ## Part two (individual exploration)
