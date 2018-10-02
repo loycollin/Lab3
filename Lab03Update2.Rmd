@@ -127,6 +127,9 @@ levels(HAPPY$FINRELA) = c("FAR ABOVE", "ABOVE", "AVG", "BELOW", "FAR BELOW")
 
 levels(factor(HAPPY$HEALTH, levels = c("EXCELLENT", "GOOD", "FAIR", "POOR")))
 
+levels(factor(HAPPY$HAPPY, levels = c("NOT TOO HAPPY", "PRETTY HAPPY", "VERY HAPPY")))
+
+
 ```
 ## Part two (individual exploration)
 
